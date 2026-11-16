@@ -1,0 +1,10 @@
+Package: iqmismatchtest
+Type: Package
+Title: DSW QA Test Package That Forces a System IQ Mismatch
+Version: 0.1.0
+Authors@R: person("DSW", "QA", email = "noreply@sycamoreinformatics.com", role = c("aut", "cre"))
+Description: Test-only package. Requires getopt >= 1.20.4 so installing it
+    upgrades a lock-pinned getopt 1.20.3 and System IQ reports a mismatch.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports: getopt (>= 1.20.4)
