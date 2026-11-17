@@ -1,0 +1,19 @@
+#!/bin/sh
+# Test-only: runs during `R CMD INSTALL` and uninstalls a package that the
+# renv.lock expects, so System IQ reports it as MISSING.
+# Override the target with IQ_MISSING_PKG (default: getopt).
+
+PKG="${IQ_MISSING_PKG:-getopt}"
+
+"${R_HOME}/bin/Rscript" -e '
+pkg <- commandArgs(trailingOnly = TRUE)[1]
+path <- find.package(pkg, quiet = TRUE)
+if (length(path) == 0) {
+  message("iqmismatchtest: ", pkg, " is not installed, nothing to remove")
+} else {
+  remove.packages(pkg, lib = dirname(path[1]))
+  message("iqmismatchtest: removed ", pkg, " from ", dirname(path[1]))
+}
+' "$PKG"
+
+exit 0
