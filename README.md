@@ -10,7 +10,7 @@ all three in the test results.
 | `MISMATCH` | reinstalls the package at another version | first package pinned in `/renv.lock` that CRAN has a different version of | `IQ_MISMATCH_PKG`, `IQ_MISMATCH_VERSION` (default: current CRAN version) |
 | `UNEXPECTED` | installs an empty stub that no lock lists | `iqunexpectedtest` | `IQ_UNEXPECTED_PKG` |
 
-Install source: `aashismanna/iq-mismatch-test-r`
+Install source: `devanshyadav-sycamore/iq-mismatch-test-r`
 
 ## Use
 
@@ -44,7 +44,7 @@ Install source: `aashismanna/iq-mismatch-test-r`
    Set `R.Version` to the R version of the exec config's base image. To use other packages,
    pin `getopt` plus any package whose pinned version is older than CRAN's current one.
 
-2. Add `aashismanna/iq-mismatch-test-r` as a GitHub package on the exec config.
+2. Add `devanshyadav-sycamore/iq-mismatch-test-r` as a GitHub package on the exec config.
 3. Build. System IQ reports:
 
    | Package | Expected | Installed | Status |
