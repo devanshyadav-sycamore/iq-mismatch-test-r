@@ -1,9 +1,11 @@
 Package: iqmismatchtest
 Type: Package
-Title: DSW QA Test Package That Forces a System IQ Missing Package
-Version: 0.2.0
+Title: DSW QA Test Package That Forces All Three System IQ Failures
+Version: 0.3.0
 Authors@R: person("DSW", "QA", email = "noreply@sycamoreinformatics.com", role = c("aut", "cre"))
-Description: Test-only package. Its configure script uninstalls getopt, a
-    package pinned in renv.lock, so System IQ reports it as MISSING.
+Description: Test-only package. Its configure script removes one package pinned
+    in renv.lock (MISSING), reinstalls another at a different version
+    (MISMATCH) and installs one that no lock lists (UNEXPECTED), so a single
+    build shows all three System IQ statuses.
 License: MIT + file LICENSE
 Encoding: UTF-8
